@@ -31,6 +31,7 @@ ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", list()).split(" ")
 # Application definition
 
 INSTALLED_APPS = [
+    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
@@ -120,7 +121,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-
+# Custom User Model
+AUTH_USER_MODEL = "users.User" # model is User from your users app
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
