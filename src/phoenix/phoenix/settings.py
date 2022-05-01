@@ -33,11 +33,17 @@ ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", list()).split(" ")
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #
+    # django apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    #custom apps
     'core',
     # 'another_app_name',
 ]
@@ -73,6 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'phoenix.wsgi.application'
 
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -105,6 +112,13 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+
+# Auth Backend for AllAuth
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 
