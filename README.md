@@ -1,4 +1,4 @@
-# phoenix
+# Django Skeleton Project -- Xit Firm
 
 ## Running the app locally
 
