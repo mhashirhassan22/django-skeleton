@@ -23,12 +23,13 @@ If needed, fill in the values in .env file
 make run
 ```
 
-### Apply database migrations in a separate terminal tab
+### Apply database migrations in a SEPARATE terminal tab
 
 ```sh
 make apply-migrations
 ```
 
+### below command is not necessary to run project
 To seed the DB, run the following command:
 
 ```shell script
